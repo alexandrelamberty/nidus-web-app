@@ -1,62 +1,39 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import axios from "axios";
-import { ExtendedWindow, getConfig } from "./config";
-import { Zones } from "./components/Zones";
-import { Devices } from "./components/Devices";
-import { Capabilities } from "./components/Capabilities";
 import { Outlet, Route, Routes } from "react-router";
-import { Dashboard } from "./routes/Dashboard";
-import { Temperature } from "./routes/Temperature";
-import { Settings } from "./routes/Settings";
-import { Link } from "react-router-dom";
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import { Capabilities } from "./features/capability/Capabilities";
+import { Dashboard } from "./features/dashboard/Dashboard";
+import { Devices } from "./features/device/Devices";
+import { Settings } from "./features/settings/Settings";
+import { Zones } from "./features/zone/Zones";
 import { NoMatch } from "./routes/NoMatch";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="temperature" element={<Temperature />} />
-          <Route path="settings" element={<Settings />} />
-
-          {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
-          <Route path="*" element={<NoMatch />} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="devices" element={<Devices />} />
+        <Route path="capabilities" element={<Capabilities />} />
+        <Route path="zones" element={<Zones />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="*" element={<NoMatch />} />
+      </Route>
+    </Routes>
   );
 }
 
 function Layout() {
   return (
-    <div>
-      {/* A "layout route" is a good place to put markup you want to
-          share across all the pages on your site, like navigation. */}
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/temperature">Temperature</Link>
-          </li>
-          <li>
-            <Link to="/settings">Settings</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <hr />
-
-      {/* An <Outlet> renders whatever child route is currently active,
-          so you can think about this <Outlet> as a placeholder for
-          the child routes we defined above. */}
-      <Outlet />
+    <div className="h-full flex">
+      <div className="min-h-0 flex-1 flex overflow-hidden">
+        <Sidebar />
+        <main className="min-w-0 flex-1 border-t border-gray-200 lg:flex p-4">
+          <section>
+            <Outlet />
+          </section>
+        </main>
+      </div>
     </div>
   );
 }

@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ExtendedWindow, getConfig } from "../config";
+import { getConfig } from "../../config";
 
-interface Devices {
+interface Zone {
   id: string;
   name: string;
 }
 
-export const Devices = () => {
-  const [data, setData] = useState<Devices[]>([]);
+export const Zones = () => {
+  const [zones, setZones] = useState<Zone[]>([]);
   const [error, setError] = useState("");
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     axios
-      .get(getConfig("REACT_APP_API_URL") + "/devices")
+      .get(getConfig("REACT_APP_API_URL") + "/zones")
       .then(function (response) {
         console.log(response);
-        setData(response.data.data);
+        setZones(response.data.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -28,9 +28,9 @@ export const Devices = () => {
 
   return (
     <>
-      <h3>Devices</h3>
-      {data?.map((device) => (
-        <li key={device.id}>{device.name}</li>
+      <h3>Zones</h3>
+      {zones?.map((zone) => (
+        <li key={zone.id}>{zone.name}</li>
       ))}
     </>
   );

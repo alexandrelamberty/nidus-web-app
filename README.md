@@ -31,7 +31,7 @@ accordingly with the `database` service configuration.
 REACT_APP_ENV=dev
 REACT_APP_API_URL=http://localhost:3333
 ```
-
+Full Stack Développeur Web
 Run the application 
 
 ```bash
@@ -70,3 +70,7 @@ docker run -p 3000:3000 --network=nidus_default --env-file .env --name nidus-web
 docker tag alexandrelamberty/nidus-web:latest alexandrelamberty/nidus-web:latest
 docker push alexandrelamberty/nidus-web:latest
 ```
+
+## References
+
+- <https://react-redux.js.org/>
