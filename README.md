@@ -16,6 +16,12 @@ Home monitoring web application part of the
 - [ ] Manage your devices
 - [ ] View statistics
 
+## Technolgies and frameworks
+
+- [React](https://reactjs.org/)
+- [Redux](https://redux-toolkit.js.org/)
+- [TaildindCSS](https://tailwindcss.com/)
+
 ## Usage
 
 This application is part of a Docker stack and rely on a Go api service. see:
@@ -25,13 +31,13 @@ complete stack or only specific services.
 ## Run with NPM
 
 If the api service is up and running, create an .env file and fill it
-accordingly with the `database` service configuration.
+accordingly with the service configuration.
 
 ```properties
 REACT_APP_ENV=dev
 REACT_APP_API_URL=http://localhost:3333
 ```
-Full Stack Développeur Web
+
 Run the application 
 
 ```bash
@@ -47,7 +53,7 @@ Go to [http://localhost:3000]
 ## Build and run with Docker
 
 > Environment variables injection for React, see: [environment.sh](environment.sh) \
-> The image build need a .env file to provide variables to be read and updated 
+> FIXME: The image build need a .env file to provide variables to be read and updated
 
 Build the image, see: [Dockerfile](./Dockerfile).
 
@@ -70,7 +76,3 @@ docker run -p 3000:3000 --network=nidus_default --env-file .env --name nidus-web
 docker tag alexandrelamberty/nidus-web:latest alexandrelamberty/nidus-web:latest
 docker push alexandrelamberty/nidus-web:latest
 ```
-
-## References
-
-- <https://react-redux.js.org/>
