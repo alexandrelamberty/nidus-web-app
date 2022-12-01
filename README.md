@@ -7,12 +7,13 @@ Home monitoring web application part of the
 
 - [ ] Dashboard
   - [ ] Widgets
-    - [ ] Weather
+    - [ ] Sensors
+      - [ ] Humidity
+      - [ ] Temperature
+      - [ ] Pressure
+      - [ ] Motion
     - [ ] Devices 
-    - [ ] Humidity
-    - [ ] Temperature
-    - [ ] Pressure
-    - [ ] Motion
+    - [ ] Weather
 - [ ] Manage your devices
 - [ ] View statistics
 
@@ -52,8 +53,11 @@ Go to [http://localhost:3000]
 
 ## Build and run with Docker
 
+As we use Nginx to serve our application, we don't have access to the Node
+environment variables. 
 > Environment variables injection for React, see: [environment.sh](environment.sh) \
 > FIXME: The image build need a .env file to provide variables to be read and updated
+  Switch to key/value env variable!
 
 Build the image, see: [Dockerfile](./Dockerfile).
 

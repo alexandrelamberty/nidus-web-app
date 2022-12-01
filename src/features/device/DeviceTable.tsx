@@ -33,6 +33,7 @@ export default function DeviceTable() {
       })
       .finally(() => setLoaded(true));
   }, []);
+
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
