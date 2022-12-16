@@ -2,7 +2,7 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { getConfig } from "../../config";
-import { Devices } from "./Devices";
+import { Devices } from "../../routes/Devices";
 
 interface Device {
   id: string;

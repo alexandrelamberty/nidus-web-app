@@ -3,6 +3,8 @@
 Home monitoring web application part of the
 [Nidus](https://github.com/alexandrelamberty/nidus) project.
 
+This application use the [Nidus API](https://github.com/alexandrelamberty/nidus-api)
+
 ## Features
 
 - [ ] Dashboard
@@ -49,7 +51,11 @@ Go to [http://localhost:3000]
 
 ## Test with NPM
 
-> To implement
+At the moment only some tests for the routes and components are avalable!
+
+```bash
+npm run test
+```
 
 ## Build and run with Docker
 

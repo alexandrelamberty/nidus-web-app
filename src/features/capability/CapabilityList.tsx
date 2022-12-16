@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ExtendedWindow, getConfig } from "../../config";
+import { useEffect, useState } from "react";
+import { getConfig } from "../../config";
 
 interface Capability {
   id: string;
