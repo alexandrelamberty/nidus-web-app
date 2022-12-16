@@ -41,7 +41,6 @@ If the api service is up and running, create an .env file and fill it
 accordingly with the service configuration.
 
 ```properties
-REACT_APP_ENV=dev
 REACT_APP_API_URL=http://localhost:3333
 ```
 
