@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
 import {
   BriefcaseIcon,
   CalendarIcon,
@@ -9,19 +9,22 @@ import {
   LinkIcon,
   PencilIcon,
 } from "@heroicons/react/24/solid";
-import { Menu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
 //@ts-ignore
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Headings() {
+type HeadingsProp = {
+  title: string;
+};
+export default function Headings({ title }: HeadingsProp) {
   return (
     <div className="lg:flex lg:items-center lg:justify-between">
       <div className="flex-1 min-w-0">
         <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
-          Back End Developer
+          {title}
         </h2>
         <div className="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
           <div className="mt-2 flex items-center text-sm text-gray-500">

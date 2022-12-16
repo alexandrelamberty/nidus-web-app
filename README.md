@@ -1,7 +1,12 @@
+[![Docker](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/docker.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/docker.yaml)
+[![React](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml)
+
 # Nidus Web Application
 
-Home monitoring web application part of the 
+Home monitoring web application part of the
 [Nidus](https://github.com/alexandrelamberty/nidus) project.
+
+This application use the [Nidus API](https://github.com/alexandrelamberty/nidus-api)
 
 ## Features
 
@@ -12,7 +17,7 @@ Home monitoring web application part of the
       - [ ] Temperature
       - [ ] Pressure
       - [ ] Motion
-    - [ ] Devices 
+    - [ ] Devices
     - [ ] Weather
 - [ ] Manage your devices
 - [ ] View statistics
@@ -35,11 +40,20 @@ If the api service is up and running, create an .env file and fill it
 accordingly with the service configuration.
 
 ```properties
+<<<<<<< HEAD
 REACT_APP_ENV=dev
 REACT_APP_API_URL=http://localhost:3333
 ```
 
-Run the application 
+Run the application
+=======
+
+REACT_APP_API_URL=<http://localhost:3333>
+
+```
+
+Run the application
+>>>>>>> 7614e6cdad1ae56cb2a23d17e1be5d7ea64ff3d0
 
 ```bash
 npm run start
@@ -49,12 +63,26 @@ Go to [http://localhost:3000]
 
 ## Test with NPM
 
+<<<<<<< HEAD
 > To implement
+=======
+At the moment only some tests for the routes and components are avalable!
+
+```bash
+npm run test
+```
+
+>>>>>>> 7614e6cdad1ae56cb2a23d17e1be5d7ea64ff3d0
 
 ## Build and run with Docker
 
 As we use Nginx to serve our application, we don't have access to the Node
-environment variables. 
+<<<<<<< HEAD
+environment variables.
+=======
+
+environment variables.
+>>>>>>> 7614e6cdad1ae56cb2a23d17e1be5d7ea64ff3d0
 > Environment variables injection for React, see: [environment.sh](environment.sh) \
 > FIXME: The image build need a .env file to provide variables to be read and updated
   Switch to key/value env variable!
@@ -72,6 +100,8 @@ network to join.
 docker run -p 3000:3000 --network=nidus_default --env-file .env --name nidus-web -d alexandrelamberty/nidus-web:latest
 ```
 
+<<<<<<< HEAD
+
 ## Push to Docker Hub
 
 > Automated with GitHub Action, see: [docker.yml](./.github/workflows/docker.yml)
@@ -80,3 +110,6 @@ docker run -p 3000:3000 --network=nidus_default --env-file .env --name nidus-web
 docker tag alexandrelamberty/nidus-web:latest alexandrelamberty/nidus-web:latest
 docker push alexandrelamberty/nidus-web:latest
 ```
+
+=======
+>>>>>>> 7614e6cdad1ae56cb2a23d17e1be5d7ea64ff3d0
