@@ -1,3 +1,7 @@
+[![Docker](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/docker.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/docker.yaml)
+
+[![React](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml)
+
 # Nidus Web Application
 
 Home monitoring web application part of the
