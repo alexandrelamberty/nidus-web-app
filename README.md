@@ -80,17 +80,3 @@ network to join.
 ```bash
 docker run -p 3000:3000 --network=nidus_default --env-file .env --name nidus-web -d alexandrelamberty/nidus-web:latest
 ```
-
-<<<<<<< HEAD
-
-## Push to Docker Hub
-
-> Automated with GitHub Action, see: [docker.yml](./.github/workflows/docker.yml)
-
-```bash
-docker tag alexandrelamberty/nidus-web:latest alexandrelamberty/nidus-web:latest
-docker push alexandrelamberty/nidus-web:latest
-```
-
-=======
->>>>>>> 7614e6cdad1ae56cb2a23d17e1be5d7ea64ff3d0
