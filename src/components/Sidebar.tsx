@@ -1,14 +1,6 @@
-import { Dialog, Transition } from "@headlessui/react";
-import {
-  FireIcon,
-  HomeIcon,
-  InboxIcon,
-  Cog6ToothIcon,
-  BuildingStorefrontIcon,
-  LinkIcon,
-} from "@heroicons/react/24/outline";
+import { Cog6ToothIcon, HomeIcon, LinkIcon } from "@heroicons/react/24/outline";
 import { CodeBracketIcon, Squares2X2Icon } from "@heroicons/react/24/solid";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 const user = {
   name: "Emily Selman",
@@ -52,8 +44,6 @@ function classNames(...classes) {
 }
 
 export default function Sidebar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
-
   return (
     <>
       <div className="lg:flex lg:flex-shrink-0">
