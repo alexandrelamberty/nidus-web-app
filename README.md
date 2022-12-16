@@ -30,7 +30,7 @@ This application use the [Nidus API](https://github.com/alexandrelamberty/nidus-
 
 ## Usage
 
-This application is part of a Docker stack and rely on a Go api service. see:
+This application is part of a Docker stack and rely on a Go API service. see:
 [Nidus](https://github.com/alexandrelamberty/nidus) project to launch the
 complete stack or only specific services.
 
@@ -40,20 +40,10 @@ If the api service is up and running, create an .env file and fill it
 accordingly with the service configuration.
 
 ```properties
-<<<<<<< HEAD
-REACT_APP_ENV=dev
-REACT_APP_API_URL=http://localhost:3333
-```
-
-Run the application
-=======
-
 REACT_APP_API_URL=<http://localhost:3333>
-
 ```
 
 Run the application
->>>>>>> 7614e6cdad1ae56cb2a23d17e1be5d7ea64ff3d0
 
 ```bash
 npm run start
@@ -63,26 +53,17 @@ Go to [http://localhost:3000]
 
 ## Test with NPM
 
-<<<<<<< HEAD
-> To implement
-=======
 At the moment only some tests for the routes and components are avalable!
 
 ```bash
 npm run test
 ```
 
->>>>>>> 7614e6cdad1ae56cb2a23d17e1be5d7ea64ff3d0
-
 ## Build and run with Docker
 
 As we use Nginx to serve our application, we don't have access to the Node
-<<<<<<< HEAD
-environment variables.
-=======
 
 environment variables.
->>>>>>> 7614e6cdad1ae56cb2a23d17e1be5d7ea64ff3d0
 > Environment variables injection for React, see: [environment.sh](environment.sh) \
 > FIXME: The image build need a .env file to provide variables to be read and updated
   Switch to key/value env variable!
