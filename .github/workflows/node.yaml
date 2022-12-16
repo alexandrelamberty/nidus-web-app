@@ -27,7 +27,7 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm intall
+        run: npm install
 
       - name: Create build
         run: npm run build --if-present
