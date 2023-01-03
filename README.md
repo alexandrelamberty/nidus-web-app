@@ -1,5 +1,5 @@
+[![Node](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml)
 [![Docker](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/docker.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/docker.yaml)
-[![React](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml)
 
 # Nidus Web Application
 
@@ -32,11 +32,11 @@ This application use the [Nidus API](https://github.com/alexandrelamberty/nidus-
 
 This application is part of a Docker stack and rely on a Go API service. see:
 [Nidus](https://github.com/alexandrelamberty/nidus) project to launch the
-complete stack or only specific services.
+complete stack or only the API service.
 
 ## Run with NPM
 
-If the api service is up and running, create an .env file and fill it
+If the API service is up and running, create an .env file and fill it
 accordingly with the service configuration.
 
 ```properties
@@ -62,11 +62,9 @@ npm run test
 ## Build and run with Docker
 
 As we use Nginx to serve our application, we don't have access to the Node
-
 environment variables.
-> Environment variables injection for React, see: [environment.sh](environment.sh) \
-> FIXME: The image build need a .env file to provide variables to be read and updated
-  Switch to key/value env variable!
+
+> Environment variables injection for React, see: [environment.sh](environment.sh)
 
 Build the image, see: [Dockerfile](./Dockerfile).
 
