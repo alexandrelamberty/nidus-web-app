@@ -1,6 +1,7 @@
 [![Docker](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/docker.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/docker.yaml)
 [![React](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml/badge.svg)](https://github.com/alexandrelamberty/nidus-web-app/actions/workflows/node.yaml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/93b0784667b642d7ab8dba6dd2d1e910)](https://www.codacy.com/gh/alexandrelamberty/nidus-web-app/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alexandrelamberty/nidus-web-app&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/alexandrelamberty/nidus-web-app/branch/master/graph/badge.svg?token=CHR4ZPB660)](https://codecov.io/gh/alexandrelamberty/nidus-web-app)
 [![DockerHub](https://img.shields.io/badge/DockerHub-images-important.svg?logo=Docker)](https://hub.docker.com/r/alexandrelamberty/nidus-web-app)
 
 # Nidus Web Application
