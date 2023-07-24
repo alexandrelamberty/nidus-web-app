@@ -1,6 +1,6 @@
 # Nidus Web Application
 
-Home monitoring web application part of the 
+Home monitoring web application part of the
 [Nidus](https://github.com/alexandrelamberty/nidus) project.
 
 ## Features
@@ -12,7 +12,7 @@ Home monitoring web application part of the
       - [ ] Temperature
       - [ ] Pressure
       - [ ] Motion
-    - [ ] Devices 
+    - [ ] Devices
     - [ ] Weather
 - [ ] Manage your devices
 - [ ] View statistics
@@ -39,7 +39,7 @@ REACT_APP_ENV=dev
 REACT_APP_API_URL=http://localhost:3333
 ```
 
-Run the application 
+Run the application
 
 ```bash
 npm run start
@@ -54,7 +54,7 @@ Go to [http://localhost:3000]
 ## Build and run with Docker
 
 As we use Nginx to serve our application, we don't have access to the Node
-environment variables. 
+environment variables.
 > Environment variables injection for React, see: [environment.sh](environment.sh) \
 > FIXME: The image build need a .env file to provide variables to be read and updated
   Switch to key/value env variable!
@@ -80,3 +80,5 @@ docker run -p 3000:3000 --network=nidus_default --env-file .env --name nidus-web
 docker tag alexandrelamberty/nidus-web:latest alexandrelamberty/nidus-web:latest
 docker push alexandrelamberty/nidus-web:latest
 ```
+
+## Storybook

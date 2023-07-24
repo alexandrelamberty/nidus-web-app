@@ -1,42 +1,5 @@
 import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
-
-const widgets = [
-  {
-    name: "Living Room",
-    initials: "GA",
-    href: "#",
-    value: 16,
-    bgColor: "bg-pink-600",
-  },
-  {
-    name: "Kitchen",
-    initials: "CD",
-    href: "#",
-    value: 12,
-    bgColor: "bg-purple-600",
-  },
-  {
-    name: "Office",
-    initials: "T",
-    href: "#",
-    value: 16,
-    bgColor: "bg-yellow-500",
-  },
-  {
-    name: "Garage",
-    initials: "RC",
-    href: "#",
-    value: 8,
-    bgColor: "bg-green-500",
-  },
-  {
-    name: "Shed",
-    initials: "RC",
-    href: "#",
-    value: 8,
-    bgColor: "bg-green-500",
-  },
-];
+import { widgets } from "./WidgetList";
 
 //@ts-ignore
 function classNames(...classes) {
@@ -46,10 +9,7 @@ function classNames(...classes) {
 export const Dashboard = () => {
   return (
     <div>
-      <ul
-        role="list"
-        className="m-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4"
-      >
+      <ul className="m-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {widgets.map((project) => (
           <li
             key={project.name}

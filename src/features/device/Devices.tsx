@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { ExtendedWindow, getConfig } from "../../config";
-import DeviceTable from "./DeviceTable";
 import Headings from "../../components/Headings";
 import { DeviceForm } from "./DeviceForm";
+import DeviceTable from "./DeviceTable";
 
 export const Devices = () => {
   // Update / Scan for new device then show config windof for the devoce
