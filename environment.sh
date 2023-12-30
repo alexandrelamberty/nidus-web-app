@@ -9,7 +9,7 @@ echo "Create environment variable"
 # Add assignment
 echo "window._env_ = {" >> ./env-config.js
 
-# Read each line in .env.tmp file
+# Read each line in .env.tmpl file
 # Each line represents key=value pairs
 while read -r line || [[ -n "$line" ]];
 do
@@ -28,6 +28,6 @@ do
     
     # Append configuration property to JS file
     echo "  $varname: \"$value\"," >> ./env-config.js
-done < .env.tmp
+done < .env.tmpl
 
 echo "}" >> ./env-config.js

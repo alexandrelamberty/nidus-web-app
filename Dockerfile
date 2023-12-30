@@ -19,8 +19,8 @@ RUN apk add --no-cache bash
 WORKDIR /usr/share/nginx/html
 # Environment variables
 COPY ./environment.sh .
-COPY .env.tmp .
+COPY .env.tmpl .
 RUN chmod +x environment.sh
-# Serve web app 
 EXPOSE 3000
+# environment.sh copy env from .env.tmp or use environment variables
 CMD ["/bin/bash", "-c", "/usr/share/nginx/html/environment.sh && nginx -g \"daemon off;\""]
