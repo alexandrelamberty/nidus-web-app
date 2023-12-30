@@ -40,7 +40,7 @@ If the API service is up and running, create an .env file and fill it
 accordingly with the service configuration.
 
 ```properties
-REACT_APP_API_URL=<http://localhost:3333>
+REACT_APP_API_URL=http://localhost:3333
 ```
 
 Run the application
@@ -53,7 +53,7 @@ Go to [http://localhost:3000]
 
 ## Test with NPM
 
-At the moment only some tests for the routes and components are avalable!
+At the moment only some tests for the routes and components are available!
 
 ```bash
 npm run test
