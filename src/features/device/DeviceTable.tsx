@@ -1,8 +1,5 @@
-import { CheckIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { getConfig } from "../../config";
-import { Devices } from "../../routes/Devices";
 
 interface Device {
   id: string;
@@ -22,7 +19,7 @@ export default function DeviceTable() {
 
   useEffect(() => {
     axios
-      .get(getConfig("REACT_APP_API_URL") + "/devices")
+      .get("http://localhost:3333/devices")
       .then(function (response) {
         console.log(response);
         setData(response.data.data);

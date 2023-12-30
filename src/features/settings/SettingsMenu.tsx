@@ -1,11 +1,23 @@
-export const Settings = () => {
+import { Link, useNavigate } from "react-router-dom";
+
+const settingsMenu = [
+  {
+    name: "General",
+    href: "/settings",
+  },
+  {
+    name: "Security",
+    href: "/settings/security",
+  },
+];
+
+export const SettingsMenu = () => {
+  const navigate = useNavigate();
   return (
     <div>
-      <h1>Settings</h1>
-      <h3>General</h3>
-      <h3>Dashboard</h3>
-      <h3>Security</h3>
-      <h2>Paiting key</h2>
+      {settingsMenu.map((menu) => (
+        <Link to={menu.href}>{menu.name}</Link>
+      ))}
     </div>
   );
 };

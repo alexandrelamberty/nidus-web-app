@@ -1,6 +1,5 @@
 import { Cog6ToothIcon, HomeIcon, LinkIcon } from "@heroicons/react/24/outline";
 import { CodeBracketIcon, Squares2X2Icon } from "@heroicons/react/24/solid";
-import { useState } from "react";
 
 const user = {
   name: "Emily Selman",
@@ -10,6 +9,12 @@ const user = {
 
 const navigationS = [
   { name: "Dashboard", icon: Squares2X2Icon, href: "/", current: true },
+  {
+    name: "Zones",
+    icon: HomeIcon,
+    href: "/zones",
+    current: false,
+  },
   {
     name: "Devices",
     icon: LinkIcon,
@@ -25,12 +30,6 @@ const navigationS = [
     current: false,
   },
   {
-    name: "Zones",
-    icon: HomeIcon,
-    href: "/zones",
-    current: false,
-  },
-  {
     name: "Settings",
     icon: Cog6ToothIcon,
     href: "/settings",
@@ -38,10 +37,6 @@ const navigationS = [
   },
 ];
 
-//@ts-ignore
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Sidebar() {
   return (

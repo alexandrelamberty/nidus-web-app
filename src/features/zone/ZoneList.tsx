@@ -1,31 +1,10 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { getConfig } from "../../config";
+import { Zone } from "./Zone";
 
-interface Zone {
-  id: string;
-  name: string;
-}
+type ZoneListProps = {
+  zones: Zone[];
+};
 
-export const Zones = () => {
-  const [zones, setZones] = useState<Zone[]>([]);
-  const [error, setError] = useState("");
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    axios
-      .get(getConfig("REACT_APP_API_URL") + "/zones")
-      .then(function (response) {
-        console.log(response);
-        setZones(response.data.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-        setError(error.message);
-      })
-      .finally(() => setLoaded(true));
-  }, []);
-
+export const ZoneList = ({zones}: ZoneListProps) => {
   return (
     <>
       <h3>Zones</h3>

@@ -8,7 +8,7 @@ interface Capability {
   kind: string;
 }
 
-export const Capabilities = () => {
+export const CapabilityList = () => {
   const [capabilities, setCapabilities] = useState<Capability[]>([]);
   const [error, setError] = useState("");
   const [loaded, setLoaded] = useState(false);
