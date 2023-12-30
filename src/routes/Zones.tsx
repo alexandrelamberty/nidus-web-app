@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Headings from "../components/Headings";
+import { getConfig } from "../config";
 import { Zone } from "../features/zone/Zone";
 import { ZoneGrid } from "../features/zone/ZoneGrid";
 
@@ -11,7 +12,7 @@ export const Zones = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/zones")
+      .get(getConfig("REACT_APP_API_URL") + "/zones")
       .then(function (response) {
         console.log(response);
         setZones(response.data.data);

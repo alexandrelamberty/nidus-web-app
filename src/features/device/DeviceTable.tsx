@@ -1,35 +1,10 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-interface Device {
-  id: string;
-  name: string;
-  mac: string;
-  ip: string;
-}
+import { Device } from "./Device";
 
 interface DeviceTableProps {
   devices: Device[];
 }
 
-export default function DeviceTable() {
-  const [data, setData] = useState<Device[]>([]);
-  const [error, setError] = useState("");
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3333/devices")
-      .then(function (response) {
-        console.log(response);
-        setData(response.data.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-        setError(error.message);
-      })
-      .finally(() => setLoaded(true));
-  }, []);
+export default function DeviceTable({devices} : DeviceTableProps) {
 
   return (
     <div className="flex flex-col">
@@ -63,7 +38,7 @@ export default function DeviceTable() {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {data.map((device: Device) => (
+                {devices.map((device: Device) => (
                   <tr key={device.id}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       {device.name}

@@ -44,6 +44,8 @@ export const Dashboard = () => {
   return (
     <div className="flex-auto">
       <Headings title="Dashboard" />
+      <p>Build 1</p>
+      {process.env.REACT_APP_ENV}
       <WidgetGrid widgets={widgets} />
     </div>
   );

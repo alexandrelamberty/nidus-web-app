@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Headings from "../components/Headings";
+import { getConfig } from "../config";
 import { CapabilityGrid } from "../features/capability/CapabilityGrid";
 
 interface Capability {
@@ -16,7 +17,7 @@ export const Capabilities = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/capabilities")
+      .get(getConfig("REACT_APP_API_URL") + "/capabilities")
       .then(function (response) {
         console.log(response);
         setCapabilities(response.data.data);
