@@ -1,28 +1,21 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+
 import Headings from "../components/Headings";
-import { Device } from "../features/device/Device";
+import { getConfig } from "../config";
 import DeviceTable from "../features/device/DeviceTable";
+import useDeviceAPI from "../hooks/useDeviceAPI";
 
 export const Devices = () => {
-  // Update / Scan for new device then show config windof for the devoce
-  const [devices, setData] = useState<Device[]>([]);
-  const [error, setError] = useState("");
-  const [loaded, setLoaded] = useState(false);
+  const { devices, loading, error } = useDeviceAPI({
+    baseURL: getConfig("REACT_APP_API_URL"),
+  });
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:3333/devices")
-      .then(function (response) {
-        console.log(response);
-        setData(response.data.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-        setError(error.message);
-      })
-      .finally(() => setLoaded(true));
-  }, []);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <div className="flex-auto">

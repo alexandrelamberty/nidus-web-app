@@ -5,7 +5,7 @@ export const AddItem = ({ label }: AddItemProps) => {
   return (
     <button
     
-    key="add-item"
+      key="add-item"
       type="button"
       className="relative block w-full border-2 border-gray-300 border-dashed rounded-lg h-36 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
     >

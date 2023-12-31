@@ -1,4 +1,4 @@
-import { Device } from "./Device";
+import { Device } from "../../api/NidusAPIClient";
 
 interface DeviceTableProps {
   devices: Device[];

@@ -4,6 +4,7 @@ import { WidgetGrid } from "../features/dashboard/WidgetGrid";
 
 const widgets : ReadingWidgetProps[] = [
   {
+    id: "564762545",
     name: "Living Room",
     initials: "GA",
     href: "#",
@@ -11,13 +12,15 @@ const widgets : ReadingWidgetProps[] = [
     bgColor: "bg-pink-600",
   },
   {
+    id: "56247645",
     name: "Kitchen",
     initials: "CD",
     href: "#",
-    value: 12,
+    value: 3,
     bgColor: "bg-purple-600",
   },
   {
+    id: "564764225",
     name: "Office",
     initials: "T",
     href: "#",
@@ -25,6 +28,7 @@ const widgets : ReadingWidgetProps[] = [
     bgColor: "bg-yellow-500",
   },
   {
+    id: "564732645",
     name: "Garage",
     initials: "RC",
     href: "#",
@@ -32,6 +36,7 @@ const widgets : ReadingWidgetProps[] = [
     bgColor: "bg-green-500",
   },
   {
+    id: "564766785645",
     name: "Shed",
     initials: "RC",
     href: "#",
@@ -44,8 +49,6 @@ export const Dashboard = () => {
   return (
     <div className="flex-auto">
       <Headings title="Dashboard" />
-      <p>Build 1</p>
-      {process.env.REACT_APP_ENV}
       <WidgetGrid widgets={widgets} />
     </div>
   );

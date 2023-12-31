@@ -1,5 +1,4 @@
-import { AddItem } from "../../components/grid/AddItem";
-import { Zone } from "./Zone";
+import { Zone } from "../../api/NidusAPIClient";
 import ZoneGridItem from "./ZoneGridItem";
 
 type ZoneGridProps = {
@@ -10,9 +9,8 @@ export const ZoneGrid = ({zones} : ZoneGridProps) => {
   return (
     <ul className="m-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {zones.map((zone) => (
-        <ZoneGridItem {...zone} />
+        <ZoneGridItem key={zone.id} {...zone} />
       ))}
-      <AddItem label="Add Zone"/>
     </ul>
   );
 };

@@ -1,33 +1,20 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import Headings from "../components/Headings";
 import { getConfig } from "../config";
 import { CapabilityGrid } from "../features/capability/CapabilityGrid";
-
-interface Capability {
-  id: string;
-  type: string;
-  kind: string;
-}
+import useCapabilityAPI from "../hooks/useCapabilityAPI";
 
 export const Capabilities = () => {
-  const [capabilities, setCapabilities] = useState<Capability[]>([]);
-  const [error, setError] = useState("");
-  const [loaded, setLoaded] = useState(false);
+  const { capabilities, loading, error } = useCapabilityAPI({
+    baseURL: getConfig("REACT_APP_API_URL"),
+  });
 
-  useEffect(() => {
-    axios
-      .get(getConfig("REACT_APP_API_URL") + "/capabilities")
-      .then(function (response) {
-        console.log(response);
-        setCapabilities(response.data.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-        setError(error.message);
-      })
-      .finally(() => setLoaded(true));
-  }, []);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <div className="flex-auto">

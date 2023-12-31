@@ -1,4 +1,4 @@
-import { Zone } from "./Zone";
+import { Zone } from "../../api/NidusAPIClient";
 
 type ZoneListProps = {
   zones: Zone[];

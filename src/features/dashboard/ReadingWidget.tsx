@@ -1,4 +1,6 @@
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
+import useMQTT from "../../hooks/useMQTT";
 
 //@ts-ignore
 function classNames(...classes) {
@@ -6,19 +8,37 @@ function classNames(...classes) {
 }
 
 export type ReadingWidgetProps = {
-    name: string;
-    bgColor:string;
-    initials:string
-    href:string;
-    value:number;
+  id: string;
+  name: string;
+  bgColor: string;
+  initials: string;
+  href: string;
+  value: number;
+};
+type ReadingMessage = {
+    value:string;
 }
+export const ReadingWidget = (props: ReadingWidgetProps) => {
+  const [value, setValue] = useState("0");
+  const { subscribeToTopic, unsubscribeFromTopic } = useMQTT();
 
-export const ReadingWidget = (props : ReadingWidgetProps ) => {
+  useEffect(() => {
+    // Subscribe to a specific topic using the widgetId
+    const topic = `widget/${props.id}`;
+    subscribeToTopic(topic, (message : string) => {
+      console.log(`Received message for widget ${props.id}: ${message}`);
+      const reading : ReadingMessage = JSON.parse(message);
+      setValue(reading.value);
+    });
+
+    // Unsubscribe when the component is unmounted
+    return () => {
+      unsubscribeFromTopic(topic);
+    };
+  }, [props.id, subscribeToTopic, unsubscribeFromTopic]);
+
   return (
-    <li
-      key={props.name}
-      className="col-span-1 flex shadow-sm rounded-md h-36"
-    >
+    <li className="col-span-1 flex shadow-sm rounded-md h-36">
       <div
         className={classNames(
           props.bgColor,
@@ -35,7 +55,7 @@ export const ReadingWidget = (props : ReadingWidgetProps ) => {
           >
             {props.name}
           </a>
-          <p className="text-gray-500">{props.value} C°</p>
+          <p className="text-gray-500">{value} C°</p>
         </div>
         <div className="flex-shrink-0 pr-2">
           <button
