@@ -1,4 +1,5 @@
 import { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
+import { Link } from "react-router-dom";
 
 interface Menu {
   name: string;
@@ -33,14 +34,14 @@ export default function Sidebar({ links, user }: SidebarProps) {
                 className="py-6 flex flex-col items-center space-y-3"
               >
                 {links.map((item) => (
-                  <a
+                  <Link
+                    to={item.href}
                     key={item.name}
-                    href={item.href}
                     className="flex items-center p-4 rounded-lg text-indigo-200 hover:bg-indigo-700"
                   >
                     <item.icon className="h-6 w-6" aria-hidden="true" />
                     <span className="sr-only">{item.name}</span>
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
