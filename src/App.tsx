@@ -1,7 +1,11 @@
+import { Cog6ToothIcon, HomeIcon, LinkIcon } from "@heroicons/react/24/outline";
+import { CodeBracketIcon, Squares2X2Icon } from "@heroicons/react/24/solid";
 import { Outlet, Route, Routes, useLocation } from "react-router";
-import { useNavigate } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
+import { GeneralSettings } from "./features/settings/GeneralSettings";
+import { SecuritySettings } from "./features/settings/SecuritySettings";
+import { Capabilities } from "./routes/Capabilities";
 import { Dashboard } from "./routes/Dashboard";
 import { Devices } from "./routes/Devices";
 import { NoMatch } from "./routes/NoMatch";
@@ -10,9 +14,39 @@ import { Settings } from "./routes/Settings";
 import { SignIn } from "./routes/SignIn";
 import { Zones } from "./routes/Zones";
 
-import { GeneralSettings } from "./features/settings/GeneralSettings";
-import { SecuritySettings } from "./features/settings/SecuritySettings";
-import { Capabilities } from "./routes/Capabilities";
+const user = {
+  name: "Emily Selman",
+  imageUrl:
+    "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+};
+
+const links = [
+  { name: "Dashboard", icon: Squares2X2Icon, href: "/", current: true },
+  {
+    name: "Zones",
+    icon: HomeIcon,
+    href: "/zones",
+    current: false,
+  },
+  {
+    name: "Devices",
+    icon: LinkIcon,
+    href: "/devices",
+    current: false,
+  },
+  {
+    name: "Capabilities",
+    icon: CodeBracketIcon,
+    href: "/capabilities",
+    current: false,
+  },
+  {
+    name: "Settings",
+    icon: Cog6ToothIcon,
+    href: "/settings",
+    current: false,
+  },
+];
 
 /**
  *  React Router v6 testing
@@ -24,7 +58,6 @@ export const LocationDisplay = () => {
 };
 
 function App() {
-  const navigate = useNavigate();
   return (
     <>
       <Routes>
@@ -65,7 +98,7 @@ function Layout() {
   return (
     <div id="app" className="h-full flex">
       <div className="min-h-0 flex-1 flex overflow-hidden">
-        <Sidebar />
+        <Sidebar links={links} user={user} />
         <div className="flex-1 min-w-0 flex flex-col overflow-hidden">
           {/* Mobile top navigation */}
           {/* Content */}

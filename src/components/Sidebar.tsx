@@ -1,44 +1,20 @@
-import { Cog6ToothIcon, HomeIcon, LinkIcon } from "@heroicons/react/24/outline";
-import { CodeBracketIcon, Squares2X2Icon } from "@heroicons/react/24/solid";
+import { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
 
-const user = {
-  name: "Emily Selman",
-  imageUrl:
-    "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
+interface Menu {
+  name: string;
+  icon: ForwardRefExoticComponent<
+    Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>
+  >;
+  href: string;
+  current: boolean;
+}
 
-const navigationS = [
-  { name: "Dashboard", icon: Squares2X2Icon, href: "/", current: true },
-  {
-    name: "Zones",
-    icon: HomeIcon,
-    href: "/zones",
-    current: false,
-  },
-  {
-    name: "Devices",
-    icon: LinkIcon,
-    href: "/devices",
-    count: 3,
-    current: false,
-  },
-  {
-    name: "Capabilities",
-    icon: CodeBracketIcon,
-    href: "/capabilities",
-    count: 4,
-    current: false,
-  },
-  {
-    name: "Settings",
-    icon: Cog6ToothIcon,
-    href: "/settings",
-    current: false,
-  },
-];
+interface SidebarProps {
+  links: Menu[];
+  user: any;
+}
 
-
-export default function Sidebar() {
+export default function Sidebar({ links, user }: SidebarProps) {
   return (
     <>
       <div className="lg:flex lg:flex-shrink-0">
@@ -56,7 +32,7 @@ export default function Sidebar() {
                 aria-label="Sidebar"
                 className="py-6 flex flex-col items-center space-y-3"
               >
-                {navigationS.map((item) => (
+                {links.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}

@@ -7,11 +7,14 @@ export interface Device {
   ip: string;
   capabilities: Capability[];
   zone: Zone;
+  paired: boolean;
+  zoned: boolean;
 }
 
 export interface PairDevice {
   mac: string;
   ip: string;
+  capabilities: Capability[];
 }
 
 export interface UpdateDevice {

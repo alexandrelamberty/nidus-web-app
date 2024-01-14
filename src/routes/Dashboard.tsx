@@ -12,7 +12,7 @@ const widgets : ReadingWidgetProps[] = [
     bgColor: "bg-pink-600",
   },
   {
-    id: "56247645",
+    id: "564764225",
     name: "Kitchen",
     initials: "CD",
     href: "#",
