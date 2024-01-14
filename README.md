@@ -22,17 +22,16 @@ This application use the [Nidus API](https://github.com/alexandrelamberty/nidus-
 - [ ] Manage your devices
 - [ ] View statistics
 
-## Technolgies and frameworks
+## Technologies and frameworks
 
 - [React](https://reactjs.org/)
 - [Redux](https://redux-toolkit.js.org/)
-- [TaildindCSS](https://tailwindcss.com/)
+- [TailwindCSS](https://tailwindcss.com/)
 
 ## Usage
 
 This application is part of a Docker stack and rely on a Go API service. see:
-[Nidus](https://github.com/alexandrelamberty/nidus) project to launch the
-complete stack or only the API service.
+[Nidus](https://github.com/alexandrelamberty/nidus) project.
 
 ## Run with NPM
 
@@ -40,7 +39,8 @@ If the API service is up and running, create an .env file and fill it
 accordingly with the service configuration.
 
 ```properties
-REACT_APP_API_URL=http://localhost:3333
+REACT_APP_PROD_API_URL=http://api.nidus.lan
+REACT_APP_DEV_API_URL=http://localhost:3333
 ```
 
 Run the application
@@ -61,20 +61,14 @@ npm run test
 
 ## Build and run with Docker
 
-As we use Nginx to serve our application, we don't have access to the Node
-environment variables.
-
-> Environment variables injection for React, see: [environment.sh](environment.sh)
-
 Build the image, see: [Dockerfile](./Dockerfile).
 
 ```bash
 docker build . -t alexandrelamberty/nidus-web:latest
 ```
 
-Run the image, we specify the ports mapping, environment variables file and
-network to join.
+Run the image, specify the ports mapping and network to join.
 
 ```bash
-docker run -p 3000:3000 --network=nidus_default --env-file .env --name nidus-web -d alexandrelamberty/nidus-web:latest
+docker run -p 3000:3000 --network=nidus_default --name nidus-web -d alexandrelamberty/nidus-web:latest
 ```
