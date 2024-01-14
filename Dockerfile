@@ -7,20 +7,14 @@ COPY package-lock.json ./
 RUN npm ci --silent
 RUN npm install react-scripts@3.4.1 -g --silent
 COPY . ./
+ADD .env.tmpl .env
 RUN npm run build
 
 # production environment
 FROM nginx:stable-alpine
 COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-# Add bash
 RUN apk add --no-cache bash
-# Copy .env file and shell script to container
 WORKDIR /usr/share/nginx/html
-# Environment variables
-COPY ./environment.sh .
-COPY .env.tmpl .
-RUN chmod +x environment.sh
 EXPOSE 3000
-# environment.sh copy env from .env.tmp or use environment variables
-CMD ["/bin/bash", "-c", "/usr/share/nginx/html/environment.sh && nginx -g \"daemon off;\""]
+CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
