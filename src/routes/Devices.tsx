@@ -1,12 +1,12 @@
 
 import Headings from "../components/Headings";
-import { getConfig } from "../config";
+import { Config, getConfig } from "../config/Config";
 import DeviceTable from "../features/device/DeviceTable";
 import useDeviceAPI from "../hooks/useDeviceAPI";
 
 export const Devices = () => {
   const { devices, loading, error } = useDeviceAPI({
-    baseURL: getConfig("REACT_APP_API_URL"),
+    baseURL: getConfig(Config.API_URL),
   });
 
   if (loading) {

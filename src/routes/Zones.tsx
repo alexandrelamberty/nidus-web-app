@@ -1,12 +1,12 @@
 import Headings from "../components/Headings";
-import { getConfig } from "../config";
+import { Config, getConfig } from "../config/Config";
 import { ZoneGrid } from "../features/zone/ZoneGrid";
 import useZoneAPI from "../hooks/useZoneAPI";
 
 export const Zones = () => {
-
+  //   const { setError } = useError();
   const { zones, loading, error } = useZoneAPI({
-    baseURL: getConfig("REACT_APP_API_URL"),
+    baseURL: getConfig(Config.API_URL),
   });
 
   if (loading) {

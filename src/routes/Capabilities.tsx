@@ -1,11 +1,11 @@
 import Headings from "../components/Headings";
-import { getConfig } from "../config";
+import { Config, getConfig } from "../config/Config";
 import { CapabilityGrid } from "../features/capability/CapabilityGrid";
 import useCapabilityAPI from "../hooks/useCapabilityAPI";
 
 export const Capabilities = () => {
   const { capabilities, loading, error } = useCapabilityAPI({
-    baseURL: getConfig("REACT_APP_API_URL"),
+    baseURL: getConfig(Config.API_URL),
   });
 
   if (loading) {

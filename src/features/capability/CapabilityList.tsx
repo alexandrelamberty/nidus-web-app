@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { getConfig } from "../../config";
+import { Config, getConfig } from "../../config/Config";
 
 interface Capability {
   id: string;
@@ -15,7 +15,7 @@ export const CapabilityList = () => {
 
   useEffect(() => {
     axios
-      .get(getConfig("REACT_APP_API_URL") + "/capabilities")
+      .get(getConfig(Config.API_URL) + "/capabilities")
       .then(function (response) {
         console.log(response);
         setCapabilities(response.data.data);
