@@ -27,6 +27,7 @@ This application use the [Nidus API](https://github.com/alexandrelamberty/nidus-
 - [React](https://reactjs.org/)
 - [Redux](https://redux-toolkit.js.org/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [Docker](https://www.docker.com/)
 
 ## Usage
 
@@ -35,12 +36,11 @@ This application is part of a Docker stack and rely on a Go API service. see:
 
 ## Run with NPM
 
-If the API service is up and running, create an .env file and fill it
+If the API service is up and running, create an .env. file and fill it
 accordingly with the service configuration.
 
 ```properties
-REACT_APP_PROD_API_URL=http://api.nidus.lan
-REACT_APP_DEV_API_URL=http://localhost:3333
+REACT_APP_API_URL=http://localhost:3333
 ```
 
 Run the application

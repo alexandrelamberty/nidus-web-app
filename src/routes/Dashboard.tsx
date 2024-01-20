@@ -1,8 +1,9 @@
 import Headings from "../components/Headings";
+import { WeatherWidget } from "../features/dashboard/WeatherWidget";
 import { ReadingWidgetProps } from "../features/dashboard/ReadingWidget";
 import { WidgetGrid } from "../features/dashboard/WidgetGrid";
 
-const widgets : ReadingWidgetProps[] = [
+const widgets: ReadingWidgetProps[] = [
   {
     id: "564762545",
     name: "Living Room",
@@ -49,6 +50,8 @@ export const Dashboard = () => {
   return (
     <div className="flex-auto">
       <Headings title="Dashboard" />
+        <WeatherWidget />
+        {/* <HomeWidget /> */}
       <WidgetGrid widgets={widgets} />
     </div>
   );

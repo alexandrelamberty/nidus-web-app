@@ -1,3 +1,3 @@
-export const WelcomeWidget = () => {
+export const HomeWidget = () => {
   return <div>Widget</div>;
 };

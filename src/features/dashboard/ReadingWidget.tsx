@@ -1,11 +1,7 @@
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
+import cn from "classnames";
 import { useEffect, useState } from "react";
 import useMQTT from "../../hooks/useMQTT";
-
-//@ts-ignore
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export type ReadingWidgetProps = {
   id: string;
@@ -15,9 +11,11 @@ export type ReadingWidgetProps = {
   href: string;
   value: number;
 };
+
 type ReadingMessage = {
-    value:string;
-}
+  value: string;
+};
+
 export const ReadingWidget = (props: ReadingWidgetProps) => {
   const [value, setValue] = useState("0");
   const { subscribeToTopic, unsubscribeFromTopic } = useMQTT();
@@ -25,9 +23,9 @@ export const ReadingWidget = (props: ReadingWidgetProps) => {
   useEffect(() => {
     // Subscribe to a specific topic using the widgetId
     const topic = `widget/${props.id}`;
-    subscribeToTopic(topic, (message : string) => {
+    subscribeToTopic(topic, (message: string) => {
       console.log(`Received message for widget ${props.id}: ${message}`);
-      const reading : ReadingMessage = JSON.parse(message);
+      const reading: ReadingMessage = JSON.parse(message);
       setValue(reading.value);
     });
 
@@ -40,7 +38,7 @@ export const ReadingWidget = (props: ReadingWidgetProps) => {
   return (
     <li className="col-span-1 flex shadow-sm rounded-md h-36">
       <div
-        className={classNames(
+        className={cn(
           props.bgColor,
           "flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md"
         )}

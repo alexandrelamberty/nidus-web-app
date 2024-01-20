@@ -12,7 +12,7 @@ type ZoneGridItemProps = {
 
 export default function ZoneGridItem(props: ZoneGridItemProps) {
   return (
-    <li  className="col-span-1 flex shadow-sm rounded-md h-36">
+    <li  className="col-span-1 flex shadow-sm rounded-md h-28">
       <div
         className={classNames(
           "bg-purple-600",
