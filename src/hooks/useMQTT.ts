@@ -19,10 +19,9 @@ const useMQTT = (): MQTTHook => {
   const [client, setClient] = useState<MqttClient | null>(null);
 
   useEffect(() => {
-    // Connect to MQTT broker
     const options: IClientOptions = {
       protocol: "ws",
-      host: "0.0.0.0",
+      host: "localhost",
       port: 8083,
       path: "/mqtt"
     };
