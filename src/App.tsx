@@ -13,6 +13,7 @@ import { Register } from "./routes/Register";
 import { Settings } from "./routes/Settings";
 import { SignIn } from "./routes/SignIn";
 import { Zones } from "./routes/Zones";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const user = {
   name: "Emily Selman",
@@ -60,6 +61,8 @@ export const LocationDisplay = () => {
 function App() {
   return (
     <>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+
       <Routes>
         <Route path="/auth" element={<NoLayout />}>
           <Route index element={<SignIn />} />
@@ -79,6 +82,7 @@ function App() {
         </Route>
       </Routes>
       <LocationDisplay />
+    </ThemeProvider>
     </>
   );
 }

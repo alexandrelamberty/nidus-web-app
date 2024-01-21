@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Headings from "../components/Headings";
-import { VerticalMenu } from "../components/VerticalMenu";
+import Headings from "../components/custom/Headings";
+import { VerticalMenu } from "../components/custom/VerticalMenu";
 
 const links = [
   {

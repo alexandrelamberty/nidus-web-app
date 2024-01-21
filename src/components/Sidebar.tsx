@@ -1,5 +1,6 @@
 import { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
 import { Link } from "react-router-dom";
+import { ModeToggle } from "./ModeToggle";
 
 interface Menu {
   name: string;
@@ -43,6 +44,9 @@ export default function Sidebar({ links, user }: SidebarProps) {
                 </Link>
               ))}
             </nav>
+            <div className="py-6 flex flex-col items-center space-y-3">
+              <ModeToggle />
+            </div>
           </div>
         </div>
       </div>

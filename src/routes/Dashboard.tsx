@@ -1,7 +1,15 @@
-import Headings from "../components/Headings";
-import { WeatherWidget } from "../features/dashboard/WeatherWidget";
-import { ReadingWidgetProps } from "../features/dashboard/ReadingWidget";
-import { WidgetGrid } from "../features/dashboard/WidgetGrid";
+import Headings from "../components/custom/Headings";
+import { WeatherWidget } from "@/features/dashboard/WeatherWidget";
+import { ReadingWidgetProps } from "@/features/dashboard/ReadingWidget";
+import { WidgetGrid } from "@/features/dashboard/WidgetGrid";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/ui/select";
+import { Button } from "../ui/button";
 
 const widgets: ReadingWidgetProps[] = [
   {
@@ -50,8 +58,9 @@ export const Dashboard = () => {
   return (
     <div className="flex-auto">
       <Headings title="Dashboard" />
-        <WeatherWidget />
-        {/* <HomeWidget /> */}
+      <WeatherWidget />
+      <Button variant="secondary">Secondary</Button>
+      <div className="flex gap-4"/>
       <WidgetGrid widgets={widgets} />
     </div>
   );

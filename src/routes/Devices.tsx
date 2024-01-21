@@ -1,5 +1,5 @@
 
-import Headings from "../components/Headings";
+import Headings from "../components/custom/Headings";
 import { Config, getConfig } from "../config/Config";
 import DeviceTable from "../features/device/DeviceTable";
 import useDeviceAPI from "../hooks/useDeviceAPI";

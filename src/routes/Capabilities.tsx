@@ -1,4 +1,4 @@
-import Headings from "../components/Headings";
+import Headings from "../components/custom/Headings";
 import { Config, getConfig } from "../config/Config";
 import { CapabilityGrid } from "../features/capability/CapabilityGrid";
 import useCapabilityAPI from "../hooks/useCapabilityAPI";

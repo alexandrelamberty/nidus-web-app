@@ -1,4 +1,4 @@
-import Headings from "../components/Headings";
+import Headings from "../components/custom/Headings";
 import { Config, getConfig } from "../config/Config";
 import { ZoneGrid } from "../features/zone/ZoneGrid";
 import useZoneAPI from "../hooks/useZoneAPI";

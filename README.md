@@ -24,10 +24,13 @@ This application use the [Nidus API](https://github.com/alexandrelamberty/nidus-
 
 ## Technologies and frameworks
 
-- [React](https://reactjs.org/)
-- [Redux](https://redux-toolkit.js.org/)
-- [TailwindCSS](https://tailwindcss.com/)
 - [Docker](https://www.docker.com/)
+- [React](https://reactjs.org/)
+- [React Hook Form](https://zod.dev/)
+- [Redux](https://redux-toolkit.js.org/)
+- [Zod](https://zod.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 
 ## Usage
 
