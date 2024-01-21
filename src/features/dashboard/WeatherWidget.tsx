@@ -110,9 +110,9 @@ export const WeatherWidget = () => {
   }
 
   return (
-    <div className="flex shadow-sm rounded-md border border-slate-200">
+    <div className="flex rounded-md border shadow-sm bg-slate-400 dark:bg-slate-600 border-slate-200 dark:border-slate-600">
       <div className="flex-1 px-4 py-2 text-sm ">
-        <p className="text-gray-950 text-2xl">
+        <p className="text-gray-950 dark:text-foreground text-2xl">
           {day} {date.getDay()}, {month} {year}
         </p>
         <p className="text-gray-500 text-xl">{time}</p>

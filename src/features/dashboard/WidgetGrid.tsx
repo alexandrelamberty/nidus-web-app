@@ -1,4 +1,4 @@
-import { AddItem } from "../../components/grid/AddItem";
+import { AddItem } from "@/components/AddWidget";
 import { ReadingWidget, ReadingWidgetProps } from "./ReadingWidget";
 
 type WidgetGridProps = {

@@ -41,11 +41,21 @@ export interface UpdateCapability {
   kind?: string;
 }
 
+export enum FloorType {
+  BASEMENT = 'Basement',
+  GROUND = 'Ground Floor',
+  UPPER = 'Upper Floor',
+  SECOND = 'Second Floor',
+  THIRD = 'Third Floor',
+}
+
 export interface Zone {
   id: string;
   name: string;
-  floor: string;
+  floor: FloorType;
+  locationType: "inside" | "outside";
 }
+
 export interface CreateZone {
   name?: string;
   floor?: string;
